@@ -41,9 +41,9 @@ export default function Home() {
 
             {/* Send Link Button */}
             <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-20">
-              <button className="bg-black/60 backdrop-blur-sm text-white px-4 py-3 rounded-full text-base font-medium hover:bg-black/70 transition-colors font-inter">
-                Send a link to my phone
-              </button>
+            <button className="bg-black/60 backdrop-blur-sm text-white px-4 py-3 rounded-full text-base font-medium hover:bg-black/70 transition-colors font-inter">
+              Send a link to my phone
+            </button>
             </div>
           </div>
         </div>
