@@ -1,10 +1,18 @@
 import Image from 'next/image'
+import FloatingClothes from '../components/FloatingClothes'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-radial from-white via-white to-gray-200 flex flex-col items-center">
+    <>
+      <FloatingClothes />
+      <div 
+        className="min-h-screen flex flex-col items-center relative z-10"
+        style={{
+          background: 'radial-gradient(ellipse 100% 80% at 50% 0%, #FFFFFF 0%, #F5F5F5 40%, #E5E5E5 100%)'
+        }}
+      >
       {/* Main Content Container */}
-      <div className="flex flex-col items-center pt-16 pb-8 px-4 max-w-2xl mx-auto">
+      <div className="flex flex-col items-center pt-16 pb-8 px-4 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto">
         
         {/* Header Section */}
         <div className="text-center mb-8 max-w-md">
@@ -20,42 +28,53 @@ export default function Home() {
         <div className="relative mb-8">
           {/* iPhone Container with Shadow */}
           <div className="relative drop-shadow-2xl">
+            {/* Simple Video behind iPhone */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="absolute z-0"
+              style={{
+                height: 'calc(max(583px, min(calc(60vh - 200px), 70vh)) - 4px)',
+                width: 'max(240px, calc((60vh - 200px) * 0.41))',
+                objectFit: 'cover',
+                borderRadius: 'max(30px, calc((60vh - 200px) * 0.051))',
+                top: 'max(31px, calc((60vh - 200px) * 0.053))',
+                left: '50%',
+                transform: 'translateX(-50%)'
+              }}
+            >
+              <source src="/images/bins_new.mp4" type="video/mp4" />
+              <source src="/images/bins_new.mov" type="video/quicktime" />
+              <p>Your browser does not support the video tag.</p>
+            </video>
+
             <Image
               src="/images/iphone-mockup.png"
               alt="Bins App on iPhone"
               width={268}
               height={583}
               className="relative z-10"
+              style={{
+                height: 'max(583px, min(calc(60vh - 200px), 70vh))',
+                width: 'auto',
+                minWidth: '268px'
+              }}
               priority
             />
-            
-            {/* Logo Overlay */}
-            <div className="absolute top-14 left-1/2 transform -translate-x-1/2 z-20">
-              <Image
-                src="/images/logo.svg"
-                alt="Bins Logo"
-                width={100}
-                height={44}
-              />
-            </div>
-
-            {/* Send Link Button */}
-            <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-20">
-              <button className="bg-black/60 backdrop-blur-sm text-white px-4 py-3 rounded-full text-base font-medium hover:bg-black/70 transition-colors font-inter">
-                Send a link to my phone
-              </button>
-            </div>
           </div>
         </div>
 
         {/* Info Bar */}
-        <div className="bg-gray-200 rounded-3xl p-4 mb-6 shadow-[inset_-8px_-8px_16px_rgba(255,255,255,0.8),inset_8px_8px_16px_rgba(208,211,213,1)] w-full max-w-lg">
+        <div className="bg-[#E5E5E5] rounded-[24px] p-4 mb-6 shadow-[8px_8px_16px_0_#D0D3D5,-8px_-8px_16px_0_rgba(255,255,255,0.8)] w-full max-w-lg">
           <div className="flex items-center justify-between gap-6">
             
             {/* App Store Card */}
             <div className="flex items-center gap-4 flex-1">
               {/* App Icon */}
-              <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-sm">
+              <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
                 <Image
                   src="/images/logo.svg"
                   alt="Bins App Icon"
@@ -69,9 +88,11 @@ export default function Home() {
                 <h3 className="font-normal text-black text-lg leading-tight font-inter">Bins</h3>
                 <p className="text-sm text-gray-700 leading-tight font-inter">Shop, Sell, Share</p>
                 <div className="flex items-center gap-2 mt-1">
-                  <div className="flex">
+                  <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-gray-700 text-xs">⭐</span>
+                      <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-gray-700">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      </svg>
                     ))}
                   </div>
                   <span className="text-xs text-gray-700">1.4K</span>
@@ -79,7 +100,7 @@ export default function Home() {
               </div>
 
               {/* GET Button */}
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-bold uppercase hover:bg-blue-600 transition-colors">
+              <button className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase hover:bg-blue-600 transition-colors">
                 GET
               </button>
             </div>
@@ -106,6 +127,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

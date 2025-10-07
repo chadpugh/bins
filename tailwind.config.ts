@@ -2,9 +2,10 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -13,10 +14,11 @@ export default {
         foreground: "var(--foreground)",
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%)',
+        'gradient-radial': 'radial-gradient(ellipse 100% 100% at 50% 0%, #ea2424ff 0%, #00ddedff 100%)',
       },
       fontFamily: {
-        'jost': ['Jost', 'sans-serif'],
+        'jost': 'var(--font-jost)',
+        'inter': 'var(--font-inter)',
       },
     },
   },
