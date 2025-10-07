@@ -113,7 +113,7 @@ export default function FloatingClothes() {
   }
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-30 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-[15] overflow-hidden">
       {clothingItems.map((item) => {
         const mouseInfluence = getMouseInfluence(item.name)
         
