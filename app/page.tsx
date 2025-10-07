@@ -28,14 +28,22 @@ export default function Home() {
         <div className="relative mb-8">
           {/* iPhone Container with Shadow */}
           <div className="relative drop-shadow-2xl">
-            {/* Simple Video behind iPhone */}
+            {/* Simple Video behind iPhone with click-to-play fallback */}
             <video
               autoPlay
               loop
               muted
               playsInline
               preload="auto"
-              className="absolute z-0"
+              className="absolute z-0 cursor-pointer"
+              onClick={(e) => {
+                const video = e.target as HTMLVideoElement;
+                if (video.paused) {
+                  video.play().catch(() => {
+                    // Silently handle autoplay failures
+                  });
+                }
+              }}
               style={{
                 height: 'calc(max(583px, min(calc(60vh - 200px), 70vh)) - 4px)',
                 width: 'max(240px, calc((60vh - 200px) * 0.41))',
