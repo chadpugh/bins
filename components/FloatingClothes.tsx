@@ -151,13 +151,6 @@ export default function FloatingClothes() {
         )
       })}
       
-      {/* Add some sparkle effects for extra polish */}
-      <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-yellow-300 rounded-full opacity-60 animate-pulse" 
-           style={{ animationDelay: '2s' }} />
-      <div className="absolute top-3/4 right-1/3 w-1 h-1 bg-pink-300 rounded-full opacity-50 animate-ping" 
-           style={{ animationDelay: '3s' }} />
-      <div className="absolute bottom-1/3 left-1/2 w-1.5 h-1.5 bg-blue-300 rounded-full opacity-40 animate-pulse" 
-           style={{ animationDelay: '4s' }} />
     </div>
   )
 }
