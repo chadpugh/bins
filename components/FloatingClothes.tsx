@@ -54,6 +54,12 @@ const clothingItems = [
 export default function FloatingClothes() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+
+  // Handle SSR
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   // Track mouse movement
   useEffect(() => {
@@ -79,6 +85,11 @@ export default function FloatingClothes() {
 
   // Calculate mouse influence for each item
   const getMouseInfluence = (itemName: string) => {
+    // Guard against SSR - return no influence if window is not available
+    if (typeof window === 'undefined') {
+      return { x: 0, y: 0, rotation: 0 }
+    }
+    
     const centerX = window.innerWidth / 2
     const centerY = window.innerHeight / 2
     
@@ -94,6 +105,11 @@ export default function FloatingClothes() {
       y: deltaY * sensitivity,
       rotation: (deltaX + deltaY) * 0.5
     }
+  }
+
+  // Don't render during SSR
+  if (!isMounted) {
+    return null
   }
 
   return (
