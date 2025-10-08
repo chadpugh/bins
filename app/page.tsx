@@ -21,13 +21,13 @@ export default function Home() {
   return (
     <>
       <div 
-        className="min-h-screen flex flex-col items-center relative z-10"
+        className="min-h-screen flex flex-col items-center justify-center relative z-10"
         style={{
           background: 'radial-gradient(ellipse 100% 80% at 50% 0%, #FFFFFF 0%, #F5F5F5 40%, #E5E5E5 100%)'
         }}
       >
       {/* Main Content Container */}
-      <div className="flex flex-col items-center pt-8 sm:pt-12 md:pt-16 pb-8 px-4 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto">
+      <div className="flex flex-col items-center py-8 px-4 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto">
         
         {/* Header Section */}
         <div className="text-center mb-6 sm:mb-8 max-w-md">
@@ -41,22 +41,23 @@ export default function Home() {
 
         {/* iPhone Section */}
         <div className="relative mb-6 sm:mb-8">
-          {/* iPhone Container with Shadow */}
-          <div className="relative drop-shadow-2xl">
+          {/* iPhone Container */}
+          <div className="relative">
             {/* Aggressive Autoplay Video behind iPhone */}
-            {/* Video with correct positioning and proportions */}
             <AutoplayVideo
               mp4Src="/images/bins_new.mp4"
               movSrc="/images/bins_new.mov"
               className="absolute z-0"
               style={{
-                height: 'calc(max(400px, min(calc(60vh - 120px), 70vh)) - 4px)',
-                width: 'max(180px, calc((60vh - 120px) * 0.42))',
-                objectFit: 'cover',
-                borderRadius: 'max(20px, calc((60vh - 120px) * 0.051))',
-                top: 'max(21px, calc((60vh - 120px) * 0.053))',
+                height: '533px',
+                width: '246px',
+                objectFit: 'contain',
+                borderRadius: '25px',
+                top: '8px',
                 left: '50%',
-                transform: 'translateX(-50%)'
+                transform: 'translateX(-50%)',
+                backgroundColor: 'rgb(252, 251, 253)',
+                boxShadow: '91.052px 184.105px 57.033px 0 rgba(0, 0, 0, 0.00), 58.033px 118.068px 52.03px 0 rgba(0, 0, 0, 0.01), 33.019px 66.038px 44.025px 0 rgba(0, 0, 0, 0.05), 15.009px 29.017px 33.019px 0 rgba(0, 0, 0, 0.09), 4.002px 7.004px 18.01px 0 rgba(0, 0, 0, 0.10)'
               }}
             />
 
@@ -67,9 +68,8 @@ export default function Home() {
               height={583}
               className="relative z-10"
               style={{
-                height: 'max(400px, min(calc(60vh - 120px), 70vh))',
-                width: 'auto',
-                minWidth: '184px'
+                height: '550px',
+                width: 'auto'
               }}
               priority
             />
@@ -110,7 +110,7 @@ export default function Home() {
               </div>
 
               {/* GET Button */}
-              <button className="bg-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-bold uppercase hover:bg-blue-600 transition-colors">
+              <button className="bg-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-bold uppercase hover:bg-blue-600 transition-colors cursor-pointer">
                 GET
               </button>
             </div>
@@ -124,7 +124,7 @@ export default function Home() {
                 console.log('FAQ button clicked')
                 openModal('faq')
               }}
-              className="text-gray-700 text-sm sm:text-base font-medium border border-gray-300 px-2 sm:px-3 py-1 sm:py-2 rounded hover:bg-gray-100 transition-colors whitespace-nowrap font-inter relative z-20 pointer-events-auto"
+              className="text-gray-700 text-sm sm:text-base font-medium border border-gray-300 px-2 sm:px-3 h-16 rounded-xl hover:bg-gray-100 transition-colors whitespace-nowrap font-inter relative z-20 pointer-events-auto flex items-center cursor-pointer"
             >
               <span className="hidden sm:inline">Seller + Buyer </span>FAQ
             </button>
@@ -135,7 +135,7 @@ export default function Home() {
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
           <a
             href="mailto:support@bins.app"
-            className="text-gray-700 px-2 sm:px-3 py-2 rounded hover:bg-gray-100 transition-colors font-inter text-sm sm:text-base"
+            className="text-gray-700 px-2 sm:px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors font-inter text-sm sm:text-base cursor-pointer"
           >
             Contact
           </a>
@@ -144,7 +144,7 @@ export default function Home() {
               console.log('Terms button clicked')
               openModal('terms')
             }}
-            className="text-gray-700 px-2 sm:px-3 py-2 rounded hover:bg-gray-100 transition-colors font-inter text-sm sm:text-base relative z-20 pointer-events-auto"
+            className="text-gray-700 px-2 sm:px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors font-inter text-sm sm:text-base relative z-20 pointer-events-auto cursor-pointer"
           >
             Terms
           </button>
@@ -153,7 +153,7 @@ export default function Home() {
               console.log('Privacy button clicked')
               openModal('privacy')
             }}
-            className="text-gray-700 px-2 sm:px-3 py-2 rounded hover:bg-gray-100 transition-colors font-inter text-sm sm:text-base relative z-20 pointer-events-auto"
+            className="text-gray-700 px-2 sm:px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors font-inter text-sm sm:text-base relative z-20 pointer-events-auto cursor-pointer"
           >
             Privacy
           </button>
