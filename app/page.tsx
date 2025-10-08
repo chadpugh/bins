@@ -313,8 +313,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Info Bar */}
-        <div className="bg-[#E5E5E5] rounded-[20px] sm:rounded-[24px] p-3 sm:p-4 mb-4 sm:mb-6 shadow-[8px_8px_16px_0_#D0D3D5,-8px_-8px_16px_0_rgba(255,255,255,0.8)] w-full max-w-lg">
+        {/* Info Bar - Desktop/iPad */}
+        <div className="hidden md:block bg-[#E5E5E5] rounded-[20px] sm:rounded-[24px] p-3 sm:p-4 mb-4 sm:mb-6 shadow-[8px_8px_16px_0_#D0D3D5,-8px_-8px_16px_0_rgba(255,255,255,0.8)] w-full max-w-lg">
           <div className="flex items-center justify-between gap-3 sm:gap-6">
             
             {/* App Store Card */}
@@ -368,8 +368,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Footer Links */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+        {/* Footer Links - Desktop/iPad */}
+        <div className="hidden md:flex flex-wrap justify-center gap-2 sm:gap-4">
           <a
             href="mailto:support@bins.app"
             className="text-gray-700 px-2 sm:px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors font-inter text-sm sm:text-base cursor-pointer"
@@ -391,6 +391,95 @@ export default function Home() {
               openModal('privacy')
             }}
             className="text-gray-700 px-2 sm:px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors font-inter text-sm sm:text-base relative z-20 pointer-events-auto cursor-pointer"
+          >
+            Privacy
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Bottom Overlay Container */}
+      <div 
+        className="block lg:hidden fixed bottom-0 left-0 right-0 px-4 py-4"
+        style={{
+          backgroundColor: '#E2E2E2',
+          borderTop: '1px solid white',
+          zIndex: 20
+        }}
+      >
+        {/* Info Bar - Mobile */}
+        <div className="bg-[#E5E5E5] rounded-[20px] p-3 mb-4 shadow-[8px_8px_16px_0_#D0D3D5,-8px_-8px_16px_0_rgba(255,255,255,0.8)] w-full">
+          <div className="flex items-center justify-between gap-3">
+            
+            {/* App Store Card */}
+            <div className="flex items-center gap-2 flex-1">
+              {/* App Icon */}
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                <Image
+                  src="/images/logo.svg"
+                  alt="Bins App Icon"
+                  width={32}
+                  height={14}
+                />
+              </div>
+              
+              {/* App Details */}
+              <div className="flex-1 min-w-0">
+                <h3 className="font-normal text-black text-base leading-tight font-inter">Bins</h3>
+                <p className="text-xs text-gray-700 leading-tight font-inter">Shop, Sell, Share</p>
+                <div className="flex items-center gap-1 mt-1">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="text-gray-700">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="text-xs text-gray-700">1.4K</span>
+                </div>
+              </div>
+
+              {/* GET Button */}
+              <button className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold uppercase hover:bg-blue-600 transition-colors cursor-pointer">
+                GET
+              </button>
+            </div>
+
+            {/* FAQ Button */}
+            <button 
+              onClick={() => {
+                console.log('FAQ button clicked')
+                openModal('faq')
+              }}
+              className="text-gray-700 text-sm font-medium border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 transition-colors whitespace-nowrap font-inter relative z-20 pointer-events-auto cursor-pointer"
+            >
+              FAQ
+            </button>
+          </div>
+        </div>
+
+        {/* Footer Links - Mobile */}
+        <div className="flex flex-wrap justify-center gap-2">
+          <a
+            href="mailto:support@bins.app"
+            className="text-gray-700 px-2 py-2 rounded-lg hover:bg-gray-100 transition-colors font-inter text-sm cursor-pointer"
+          >
+            Contact
+          </a>
+          <button
+            onClick={() => {
+              console.log('Terms button clicked')
+              openModal('terms')
+            }}
+            className="text-gray-700 px-2 py-2 rounded-lg hover:bg-gray-100 transition-colors font-inter text-sm relative z-20 pointer-events-auto cursor-pointer"
+          >
+            Terms
+          </button>
+          <button
+            onClick={() => {
+              console.log('Privacy button clicked')
+              openModal('privacy')
+            }}
+            className="text-gray-700 px-2 py-2 rounded-lg hover:bg-gray-100 transition-colors font-inter text-sm relative z-20 pointer-events-auto cursor-pointer"
           >
             Privacy
           </button>
