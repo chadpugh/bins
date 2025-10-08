@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import AutoplayVideo from '../components/AutoplayVideo'
 import Modal from '../components/Modal'
@@ -10,6 +10,13 @@ import PrivacyContent from '../components/PrivacyContent'
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState<string | null>(null)
+  const [animatedImages, setAnimatedImages] = useState({
+    shirt1: false,
+    glasses: false,
+    dress1: false,
+    shirt2: false,
+    purse: false
+  })
 
   const openModal = (modalType: string) => {
     setActiveModal(modalType)
@@ -18,6 +25,23 @@ export default function Home() {
   const closeModal = () => {
     setActiveModal(null)
   }
+
+  useEffect(() => {
+    // Staggered animation timing - twice as fast
+    const timings = [
+      { image: 'shirt1', delay: 0 },
+      { image: 'glasses', delay: 150 },
+      { image: 'dress1', delay: 300 },
+      { image: 'shirt2', delay: 450 },
+      { image: 'purse', delay: 600 }
+    ]
+
+    timings.forEach(({ image, delay }) => {
+      setTimeout(() => {
+        setAnimatedImages(prev => ({ ...prev, [image]: true }))
+      }, delay)
+    })
+  }, [])
   return (
     <>
       {/* Decorative Clothing Images */}
@@ -28,10 +52,12 @@ export default function Home() {
         className="hidden lg:block fixed top-0 left-0 pointer-events-none"
         style={{ 
           zIndex: 15,
-          left: '-3%', 
+          left: animatedImages.shirt1 ? '-3%' : '-25%', 
           top: '-12%',
           maxWidth: '620px',
-          maxHeight: '620px'
+          maxHeight: '620px',
+          opacity: animatedImages.shirt1 ? 1 : 0,
+          transition: 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       />
       <img
@@ -40,9 +66,11 @@ export default function Home() {
         className="hidden lg:block fixed bottom-0 left-0 pointer-events-none"
         style={{ 
           zIndex: 15,
-          left: '-3%', 
+          left: animatedImages.shirt2 ? '-3%' : '-25%', 
           maxWidth: '420px',
-          maxHeight: '420px'
+          maxHeight: '420px',
+          opacity: animatedImages.shirt2 ? 1 : 0,
+          transition: 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       />
       <img
@@ -52,9 +80,12 @@ export default function Home() {
         style={{ 
           top: '50%', 
           transform: 'translateY(-50%)', 
+          right: animatedImages.dress1 ? '0%' : '-20%',
           zIndex: 15,
           maxWidth: '600px',
-          maxHeight: '600px'
+          maxHeight: '600px',
+          opacity: animatedImages.dress1 ? 1 : 0,
+          transition: 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       />
       <img
@@ -63,9 +94,13 @@ export default function Home() {
         className="hidden lg:block fixed top-0 right-0 pointer-events-none"
         style={{ 
           zIndex: 15,
+          right: animatedImages.glasses ? '0%' : '-15%',
+          top: animatedImages.glasses ? '0%' : '-15%',
           maxWidth: '280px',
           maxHeight: '280px',
-          transform: 'rotate(-135deg)'
+          transform: 'rotate(-135deg)',
+          opacity: animatedImages.glasses ? 1 : 0,
+          transition: 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       />
       <img
@@ -74,10 +109,12 @@ export default function Home() {
         className="hidden lg:block fixed bottom-0 right-0 pointer-events-none"
         style={{ 
           zIndex: 15,
-          right: '-12%', 
-          bottom: '-8%', 
+          right: animatedImages.purse ? '-12%' : '-30%', 
+          bottom: animatedImages.purse ? '-8%' : '-25%', 
           maxWidth: '600px',
-          maxHeight: '600px'
+          maxHeight: '600px',
+          opacity: animatedImages.purse ? 1 : 0,
+          transition: 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       />
 
@@ -88,10 +125,12 @@ export default function Home() {
         className="hidden md:block lg:hidden fixed top-0 left-0 pointer-events-none"
         style={{ 
           zIndex: 15,
-          left: '-5%', 
+          left: animatedImages.shirt1 ? '-5%' : '-25%', 
           top: '8%',
           maxWidth: '450px',
-          maxHeight: '450px'
+          maxHeight: '450px',
+          opacity: animatedImages.shirt1 ? 1 : 0,
+          transition: 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       />
       <img
@@ -100,9 +139,11 @@ export default function Home() {
         className="hidden md:block lg:hidden fixed bottom-0 left-0 pointer-events-none"
         style={{ 
           zIndex: 15,
-          left: '-15%', 
+          left: animatedImages.shirt2 ? '-15%' : '-35%', 
           maxWidth: '350px',
-          maxHeight: '350px'
+          maxHeight: '350px',
+          opacity: animatedImages.shirt2 ? 1 : 0,
+          transition: 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       />
       <img
@@ -112,9 +153,12 @@ export default function Home() {
         style={{ 
           top: '50%', 
           transform: 'translateY(-50%)', 
+          right: animatedImages.dress1 ? '0%' : '-18%',
           zIndex: 15,
           maxWidth: '500px',
-          maxHeight: '500px'
+          maxHeight: '500px',
+          opacity: animatedImages.dress1 ? 1 : 0,
+          transition: 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       />
       <img
@@ -123,11 +167,13 @@ export default function Home() {
         className="hidden md:block lg:hidden fixed top-0 right-0 pointer-events-none"
         style={{ 
           zIndex: 15,
-          right: '-5%',
-          top: '-5%',
+          right: animatedImages.glasses ? '-5%' : '-20%',
+          top: animatedImages.glasses ? '-5%' : '-20%',
           maxWidth: '200px',
           maxHeight: '200px',
-          transform: 'rotate(-135deg)'
+          transform: 'rotate(-135deg)',
+          opacity: animatedImages.glasses ? 1 : 0,
+          transition: 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       />
       <img
@@ -136,10 +182,12 @@ export default function Home() {
         className="hidden md:block lg:hidden fixed bottom-0 right-0 pointer-events-none"
         style={{ 
           zIndex: 15,
-          right: '-10%', 
-          bottom: '-5%', 
+          right: animatedImages.purse ? '-10%' : '-28%', 
+          bottom: animatedImages.purse ? '-5%' : '-20%', 
           maxWidth: '450px',
-          maxHeight: '450px'
+          maxHeight: '450px',
+          opacity: animatedImages.purse ? 1 : 0,
+          transition: 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       />
 
@@ -150,10 +198,12 @@ export default function Home() {
         className="block md:hidden fixed left-0 pointer-events-none"
         style={{ 
           top: '15%',
-          left: '-50%',  
+          left: animatedImages.shirt1 ? '-50%' : '-70%',  
           zIndex: 11,
           maxWidth: '500px',
-          maxHeight: '500px'
+          maxHeight: '500px',
+          opacity: animatedImages.shirt1 ? 1 : 0,
+          transition: 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       />
       <img
@@ -161,12 +211,14 @@ export default function Home() {
         alt="Glasses Mobile"
         className="block md:hidden fixed pointer-events-none"
         style={{ 
-          top: '-10%', 
-          right: '-10%', 
+          top: animatedImages.glasses ? '-10%' : '-25%', 
+          right: animatedImages.glasses ? '-10%' : '-25%', 
           zIndex: 15,
           maxWidth: '140px',
           maxHeight: '140px',
-          transform: 'rotate(-135deg)'
+          transform: 'rotate(-135deg)',
+          opacity: animatedImages.glasses ? 1 : 0,
+          transition: 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       />
       <img
@@ -175,10 +227,12 @@ export default function Home() {
         className="block md:hidden fixed right-0 pointer-events-none"
         style={{ 
           bottom: '6%', 
-          right: '-180px',
+          right: animatedImages.purse ? '-180px' : '-220px',
           zIndex: 50,
           maxWidth: '400px',
-          maxHeight: '400px'
+          maxHeight: '400px',
+          opacity: animatedImages.purse ? 1 : 0,
+          transition: 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
       />
 
