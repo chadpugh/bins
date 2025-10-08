@@ -29,7 +29,7 @@ const AutoplayVideo = ({ mp4Src, movSrc, className = '', style = {} }: AutoplayV
           className={className}
           style={{
             ...style,
-            backgroundColor: '#C8A2C8',
+            backgroundColor: '#AEA6F5',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
