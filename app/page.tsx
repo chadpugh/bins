@@ -20,6 +20,168 @@ export default function Home() {
   }
   return (
     <>
+      {/* Decorative Clothing Images */}
+      {/* Desktop Layout (1024px+) */}
+      <img
+        src="/images/clothes/shirt1.png"
+        alt="Shirt 1"
+        className="hidden lg:block fixed top-0 left-0 pointer-events-none"
+        style={{ 
+          zIndex: 15,
+          left: '-3%', 
+          top: '-12%',
+          maxWidth: '620px',
+          maxHeight: '620px'
+        }}
+      />
+      <img
+        src="/images/clothes/shirt2.png"
+        alt="Shirt 2"
+        className="hidden lg:block fixed bottom-0 left-0 pointer-events-none"
+        style={{ 
+          zIndex: 15,
+          left: '-3%', 
+          maxWidth: '420px',
+          maxHeight: '420px'
+        }}
+      />
+      <img
+        src="/images/clothes/dress1.png"
+        alt="Dress"
+        className="hidden lg:block fixed right-0 pointer-events-none"
+        style={{ 
+          top: '50%', 
+          transform: 'translateY(-50%)', 
+          zIndex: 15,
+          maxWidth: '600px',
+          maxHeight: '600px'
+        }}
+      />
+      <img
+        src="/images/clothes/glasses.png"
+        alt="Glasses"
+        className="hidden lg:block fixed top-0 right-0 pointer-events-none"
+        style={{ 
+          zIndex: 15,
+          maxWidth: '280px',
+          maxHeight: '280px',
+          transform: 'rotate(-135deg)'
+        }}
+      />
+      <img
+        src="/images/clothes/purse.png"
+        alt="Purse"
+        className="hidden lg:block fixed bottom-0 right-0 pointer-events-none"
+        style={{ 
+          zIndex: 15,
+          right: '-12%', 
+          bottom: '-8%', 
+          maxWidth: '600px',
+          maxHeight: '600px'
+        }}
+      />
+
+      {/* iPad Layout (768px-1023px) */}
+      <img
+        src="/images/clothes/shirt1.png"
+        alt="Shirt 1 iPad"
+        className="hidden md:block lg:hidden fixed top-0 left-0 pointer-events-none"
+        style={{ 
+          zIndex: 15,
+          left: '-5%', 
+          top: '8%',
+          maxWidth: '450px',
+          maxHeight: '450px'
+        }}
+      />
+      <img
+        src="/images/clothes/shirt2.png"
+        alt="Shirt 2 iPad"
+        className="hidden md:block lg:hidden fixed bottom-0 left-0 pointer-events-none"
+        style={{ 
+          zIndex: 15,
+          left: '-15%', 
+          maxWidth: '350px',
+          maxHeight: '350px'
+        }}
+      />
+      <img
+        src="/images/clothes/dress1.png"
+        alt="Dress iPad"
+        className="hidden md:block lg:hidden fixed right-0 pointer-events-none"
+        style={{ 
+          top: '50%', 
+          transform: 'translateY(-50%)', 
+          zIndex: 15,
+          maxWidth: '500px',
+          maxHeight: '500px'
+        }}
+      />
+      <img
+        src="/images/clothes/glasses.png"
+        alt="Glasses iPad"
+        className="hidden md:block lg:hidden fixed top-0 right-0 pointer-events-none"
+        style={{ 
+          zIndex: 15,
+          right: '-5%',
+          top: '-5%',
+          maxWidth: '200px',
+          maxHeight: '200px',
+          transform: 'rotate(-135deg)'
+        }}
+      />
+      <img
+        src="/images/clothes/purse.png"
+        alt="Purse iPad"
+        className="hidden md:block lg:hidden fixed bottom-0 right-0 pointer-events-none"
+        style={{ 
+          zIndex: 15,
+          right: '-10%', 
+          bottom: '-5%', 
+          maxWidth: '450px',
+          maxHeight: '450px'
+        }}
+      />
+
+      {/* Mobile Layout */}
+      <img
+        src="/images/clothes/shirt1.png"
+        alt="Shirt 1 Mobile"
+        className="block md:hidden fixed left-0 pointer-events-none"
+        style={{ 
+          top: '15%',
+          left: '-50%',  
+          zIndex: 11,
+          maxWidth: '500px',
+          maxHeight: '500px'
+        }}
+      />
+      <img
+        src="/images/clothes/glasses.png"
+        alt="Glasses Mobile"
+        className="block md:hidden fixed pointer-events-none"
+        style={{ 
+          top: '-10%', 
+          right: '-10%', 
+          zIndex: 15,
+          maxWidth: '140px',
+          maxHeight: '140px',
+          transform: 'rotate(-135deg)'
+        }}
+      />
+      <img
+        src="/images/clothes/purse.png"
+        alt="Purse Mobile"
+        className="block md:hidden fixed right-0 pointer-events-none"
+        style={{ 
+          bottom: '6%', 
+          right: '-180px',
+          zIndex: 50,
+          maxWidth: '400px',
+          maxHeight: '400px'
+        }}
+      />
+
       <div 
         className="min-h-screen flex flex-col items-center justify-center relative z-10"
         style={{
