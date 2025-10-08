@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import FloatingClothes from '../components/FloatingClothes'
 import AutoplayVideo from '../components/AutoplayVideo'
 import Modal from '../components/Modal'
 import FAQContent from '../components/FAQContent'
@@ -21,7 +20,6 @@ export default function Home() {
   }
   return (
     <>
-      <FloatingClothes />
       <div 
         className="min-h-screen flex flex-col items-center relative z-10"
         style={{
