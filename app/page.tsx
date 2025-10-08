@@ -318,7 +318,12 @@ export default function Home() {
           <div className="flex items-center justify-between gap-3 sm:gap-6">
             
             {/* App Store Card */}
-            <div className="flex items-center gap-2 sm:gap-4 flex-1">
+            <a 
+              href="https://apps.apple.com/us/app/bins-shop-sell-share/id6751224385"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 sm:gap-4 flex-1 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+            >
               {/* App Icon */}
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-lg sm:rounded-xl flex items-center justify-center">
                 <Image
@@ -347,10 +352,10 @@ export default function Home() {
               </div>
 
               {/* GET Button */}
-              <button className="bg-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-bold uppercase hover:bg-blue-600 transition-colors cursor-pointer">
+              <div className="bg-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-bold uppercase hover:bg-blue-600 transition-colors">
                 GET
-              </button>
-            </div>
+              </div>
+            </a>
 
             {/* Separator - Hidden on mobile */}
             <div className="hidden sm:block w-px h-16 bg-gray-400"></div>
@@ -411,7 +416,12 @@ export default function Home() {
           <div className="flex items-center justify-between gap-3">
             
             {/* App Store Card */}
-            <div className="flex items-center gap-2 flex-1">
+            <a 
+              href="https://apps.apple.com/us/app/bins-shop-sell-share/id6751224385"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 flex-1 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+            >
               {/* App Icon */}
               <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
                 <Image
@@ -439,10 +449,10 @@ export default function Home() {
               </div>
 
               {/* GET Button */}
-              <button className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold uppercase hover:bg-blue-600 transition-colors cursor-pointer">
+              <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold uppercase hover:bg-blue-600 transition-colors">
                 GET
-              </button>
-            </div>
+              </div>
+            </a>
 
             {/* FAQ Button */}
             <button 
