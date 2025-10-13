@@ -57,205 +57,283 @@ export default function Home() {
     <>
       {/* Decorative Clothing Images */}
       {/* Desktop Layout (1024px+) */}
-      <img
-        src="/images/clothes/shirt1.png"
-        alt="Shirt 1"
+      <div
         className="hidden lg:block fixed top-0 left-0 pointer-events-none"
         style={{ 
           zIndex: 15,
           left: animatedImages.shirt1 ? '-3%' : '-25%', 
           top: '-12%',
-          maxWidth: '620px',
-          maxHeight: '620px',
-          opacity: animatedImages.shirt1 ? 1 : 0,
+          opacity: activeModal ? 0 : (animatedImages.shirt1 ? 1 : 0),
           transition: animatedImages.shirt1 ? 'left 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 300ms ease-out' : 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           transform: animatedImages.shirt1 ? `translate(${mousePos.x * 2}px, ${mousePos.y * 1}px)` : 'none'
         }}
-      />
-      <img
-        src="/images/clothes/shirt2.png"
-        alt="Shirt 2"
+      >
+        <img
+          src="/images/clothes/shirt1.png"
+          alt="Shirt 1"
+          style={{
+            maxWidth: '620px',
+            maxHeight: '620px',
+            display: 'block'
+          }}
+        />
+      </div>
+      <div
         className="hidden lg:block fixed bottom-0 left-0 pointer-events-none"
         style={{ 
           zIndex: 15,
           left: animatedImages.shirt2 ? '-3%' : '-25%',
           bottom: '-3px',
-          maxWidth: '420px',
-          maxHeight: '420px',
-          opacity: animatedImages.shirt2 ? 1 : 0,
+          opacity: activeModal ? 0 : (animatedImages.shirt2 ? 1 : 0),
           transition: animatedImages.shirt2 ? 'left 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), bottom 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 300ms ease-out' : 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           transform: animatedImages.shirt2 ? `translate(${mousePos.x * 3}px, ${mousePos.y * 1.6}px)` : 'none'
         }}
-      />
-      <img
-        src="/images/clothes/dress1.png"
-        alt="Dress"
+      >
+        <img
+          src="/images/clothes/shirt2.png"
+          alt="Shirt 2"
+          style={{
+            maxWidth: '420px',
+            maxHeight: '420px',
+            display: 'block'
+          }}
+        />
+      </div>
+      <div
         className="hidden lg:block fixed right-0 pointer-events-none"
         style={{ 
           top: '50%', 
           transform: animatedImages.dress1 ? `translateY(-50%) translate(${mousePos.x * -1.6}px, ${mousePos.y * 2.4}px)` : 'translateY(-50%)', 
           right: animatedImages.dress1 ? '-3px' : '-20%',
           zIndex: 15,
-          maxWidth: '600px',
-          maxHeight: '600px',
-          opacity: animatedImages.dress1 ? 1 : 0,
+          opacity: activeModal ? 0 : (animatedImages.dress1 ? 1 : 0),
           transition: animatedImages.dress1 ? 'right 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 300ms ease-out' : 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
-      />
-      <img
-        src="/images/clothes/glasses.png"
-        alt="Glasses"
+      >
+        <img
+          src="/images/clothes/dress1.png"
+          alt="Dress"
+          style={{
+            maxWidth: '600px',
+            maxHeight: '600px',
+            display: 'block'
+          }}
+        />
+      </div>
+      <div
         className="hidden lg:block fixed top-0 right-0 pointer-events-none"
         style={{ 
           zIndex: 15,
           right: animatedImages.glasses ? '0%' : '-15%',
           top: animatedImages.glasses ? '0%' : '-15%',
-          maxWidth: '220px',
-          maxHeight: '220px',
           transform: animatedImages.glasses ? `rotate(-135deg) translate(${mousePos.x * -2.4}px, ${mousePos.y * 1.6}px)` : 'rotate(-135deg)',
-          opacity: animatedImages.glasses ? 1 : 0,
+          opacity: activeModal ? 0 : (animatedImages.glasses ? 1 : 0),
           transition: animatedImages.glasses ? 'right 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), top 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 300ms ease-out' : 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
-      />
-      <img
-        src="/images/clothes/purse.png"
-        alt="Purse"
+      >
+        <img
+          src="/images/clothes/glasses.png"
+          alt="Glasses"
+          style={{
+            maxWidth: '220px',
+            maxHeight: '220px',
+            display: 'block'
+          }}
+        />
+      </div>
+      <div
         className="hidden lg:block fixed bottom-0 right-0 pointer-events-none"
         style={{ 
           zIndex: 15,
           right: animatedImages.purse ? '-12%' : '-30%', 
           bottom: animatedImages.purse ? '-8%' : '-25%', 
-          maxWidth: '600px',
-          maxHeight: '600px',
-          opacity: animatedImages.purse ? 1 : 0,
+          opacity: activeModal ? 0 : (animatedImages.purse ? 1 : 0),
           transition: animatedImages.purse ? 'right 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), bottom 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 300ms ease-out' : 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           transform: animatedImages.purse ? `translate(${mousePos.x * -1}px, ${mousePos.y * -3}px)` : 'none'
         }}
-      />
+      >
+        <img
+          src="/images/clothes/purse.png"
+          alt="Purse"
+          style={{
+            maxWidth: '600px',
+            maxHeight: '600px',
+            display: 'block'
+          }}
+        />
+      </div>
 
       {/* iPad Layout (768px-1023px) */}
-      <img
-        src="/images/clothes/shirt1.png"
-        alt="Shirt 1 iPad"
+      <div
         className="hidden md:block lg:hidden fixed top-0 left-0 pointer-events-none"
         style={{ 
-          zIndex: 15,
+          zIndex: 16,
           left: animatedImages.shirt1 ? '-5%' : '-25%', 
           top: '8%',
-          maxWidth: '450px',
-          maxHeight: '450px',
-          opacity: animatedImages.shirt1 ? 1 : 0,
+          opacity: activeModal ? 0 : (animatedImages.shirt1 ? 1 : 0),
           transition: animatedImages.shirt1 ? 'left 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 300ms ease-out' : 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           transform: animatedImages.shirt1 ? `translate(${mousePos.x * 1.6}px, ${mousePos.y * 0.8}px)` : 'none'
         }}
-      />
-      <img
-        src="/images/clothes/shirt2.png"
-        alt="Shirt 2 iPad"
+      >
+        <img
+          src="/images/clothes/shirt1.png"
+          alt="Shirt 1 iPad"
+          style={{
+            maxWidth: '450px',
+            maxHeight: '450px',
+            display: 'block'
+          }}
+        />
+      </div>
+      <div
         className="hidden md:block lg:hidden fixed bottom-0 left-0 pointer-events-none"
         style={{ 
-          zIndex: 15,
+          zIndex: 16,
           left: animatedImages.shirt2 ? '-15%' : '-35%',
           bottom: '-3px',
-          maxWidth: '350px',
-          maxHeight: '350px',
-          opacity: animatedImages.shirt2 ? 1 : 0,
+          opacity: activeModal ? 0 : (animatedImages.shirt2 ? 1 : 0),
           transition: animatedImages.shirt2 ? 'left 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), bottom 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 300ms ease-out' : 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           transform: animatedImages.shirt2 ? `translate(${mousePos.x * 2.4}px, ${mousePos.y * 1.2}px)` : 'none'
         }}
-      />
-      <img
-        src="/images/clothes/dress1.png"
-        alt="Dress iPad"
+      >
+        <img
+          src="/images/clothes/shirt2.png"
+          alt="Shirt 2 iPad"
+          style={{
+            maxWidth: '350px',
+            maxHeight: '350px',
+            display: 'block'
+          }}
+        />
+      </div>
+      <div
         className="hidden md:block lg:hidden fixed right-0 pointer-events-none"
         style={{ 
           top: '50%', 
           transform: animatedImages.dress1 ? `translateY(-50%) translate(${mousePos.x * -1.2}px, ${mousePos.y * 2}px)` : 'translateY(-50%)', 
           right: animatedImages.dress1 ? '-3px' : '-18%',
-          zIndex: 15,
-          maxWidth: '500px',
-          maxHeight: '500px',
-          opacity: animatedImages.dress1 ? 1 : 0,
+          zIndex: 16,
+          opacity: activeModal ? 0 : (animatedImages.dress1 ? 1 : 0),
           transition: animatedImages.dress1 ? 'right 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 300ms ease-out' : 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
-      />
-      <img
-        src="/images/clothes/glasses.png"
-        alt="Glasses iPad"
+      >
+        <img
+          src="/images/clothes/dress1.png"
+          alt="Dress iPad"
+          style={{
+            maxWidth: '500px',
+            maxHeight: '500px',
+            display: 'block'
+          }}
+        />
+      </div>
+      <div
         className="hidden md:block lg:hidden fixed top-0 right-0 pointer-events-none"
         style={{ 
-          zIndex: 15,
+          zIndex: 16,
           right: animatedImages.glasses ? '-5%' : '-20%',
           top: animatedImages.glasses ? '-5%' : '-20%',
-          maxWidth: '200px',
-          maxHeight: '200px',
           transform: animatedImages.glasses ? `rotate(-135deg) translate(${mousePos.x * -2}px, ${mousePos.y * 1.2}px)` : 'rotate(-135deg)',
-          opacity: animatedImages.glasses ? 1 : 0,
+          opacity: activeModal ? 0 : (animatedImages.glasses ? 1 : 0),
           transition: animatedImages.glasses ? 'right 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), top 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 300ms ease-out' : 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
-      />
-      <img
-        src="/images/clothes/purse.png"
-        alt="Purse iPad"
+      >
+        <img
+          src="/images/clothes/glasses.png"
+          alt="Glasses iPad"
+          style={{
+            maxWidth: '200px',
+            maxHeight: '200px',
+            display: 'block'
+          }}
+        />
+      </div>
+      <div
         className="hidden md:block lg:hidden fixed bottom-0 right-0 pointer-events-none"
         style={{ 
-          zIndex: 15,
+          zIndex: 16,
           right: animatedImages.purse ? '-10%' : '-28%', 
           bottom: animatedImages.purse ? '-5%' : '-20%', 
-          maxWidth: '450px',
-          maxHeight: '450px',
-          opacity: animatedImages.purse ? 1 : 0,
+          opacity: activeModal ? 0 : (animatedImages.purse ? 1 : 0),
           transition: animatedImages.purse ? 'right 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), bottom 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 300ms ease-out' : 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           transform: animatedImages.purse ? `translate(${mousePos.x * -0.8}px, ${mousePos.y * -2.4}px)` : 'none'
         }}
-      />
+      >
+        <img
+          src="/images/clothes/purse.png"
+          alt="Purse iPad"
+          style={{
+            maxWidth: '450px',
+            maxHeight: '450px',
+            display: 'block'
+          }}
+        />
+      </div>
 
       {/* Mobile Layout */}
-      <img
-        src="/images/clothes/shirt1.png"
-        alt="Shirt 1 Mobile"
+      <div
         className="block md:hidden fixed left-0 pointer-events-none"
         style={{ 
           top: '15%',
           left: animatedImages.shirt1 ? '-50%' : '-70%',  
-          zIndex: 11,
-          maxWidth: '500px',
-          maxHeight: '500px',
-          opacity: animatedImages.shirt1 ? 1 : 0,
+          zIndex: 17,
+          opacity: activeModal ? 0 : (animatedImages.shirt1 ? 1 : 0),
           transition: animatedImages.shirt1 ? 'left 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), top 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 300ms ease-out' : 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           transform: animatedImages.shirt1 ? `translate(${Math.max(mousePos.x * 1, -4)}px, ${mousePos.y * 0.6}px)` : 'none'
         }}
-      />
-      <img
-        src="/images/clothes/glasses.png"
-        alt="Glasses Mobile"
+      >
+        <img
+          src="/images/clothes/shirt1.png"
+          alt="Shirt 1 Mobile"
+          style={{
+            maxWidth: '500px',
+            maxHeight: '500px',
+            display: 'block'
+          }}
+        />
+      </div>
+      <div
         className="block md:hidden fixed pointer-events-none"
         style={{ 
           top: animatedImages.glasses ? '-10%' : '-25%', 
           right: animatedImages.glasses ? '-10%' : '-25%', 
-          zIndex: 15,
-          maxWidth: '140px',
-          maxHeight: '140px',
+          zIndex: 17,
           transform: animatedImages.glasses ? `rotate(-135deg) translate(${Math.min(mousePos.x * -1.6, 4)}px, ${Math.max(mousePos.y * 1, -4)}px)` : 'rotate(-135deg)',
-          opacity: animatedImages.glasses ? 1 : 0,
+          opacity: activeModal ? 0 : (animatedImages.glasses ? 1 : 0),
           transition: animatedImages.glasses ? 'top 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), right 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 300ms ease-out' : 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
         }}
-      />
-      <img
-        src="/images/clothes/purse.png"
-        alt="Purse Mobile"
+      >
+        <img
+          src="/images/clothes/glasses.png"
+          alt="Glasses Mobile"
+          style={{
+            maxWidth: '140px',
+            maxHeight: '140px',
+            display: 'block'
+          }}
+        />
+      </div>
+      <div
         className="block md:hidden fixed right-0 pointer-events-none"
         style={{ 
           bottom: '6%', 
           right: animatedImages.purse ? '-180px' : '-220px',
-          zIndex: 50,
-          maxWidth: '400px',
-          maxHeight: '400px',
-          opacity: animatedImages.purse ? 1 : 0,
+          zIndex: 17,
+          opacity: activeModal ? 0 : (animatedImages.purse ? 1 : 0),
           transition: animatedImages.purse ? 'bottom 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), right 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 300ms ease-out' : 'all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           transform: animatedImages.purse ? `translate(${Math.min(mousePos.x * -0.6, 6)}px, ${mousePos.y * -1.6}px)` : 'none'
         }}
-      />
+      >
+        <img
+          src="/images/clothes/purse.png"
+          alt="Purse Mobile"
+          style={{
+            maxWidth: '400px',
+            maxHeight: '400px',
+            display: 'block'
+          }}
+        />
+      </div>
 
       <div 
         className="min-h-screen flex flex-col items-center justify-center relative z-10"
@@ -322,7 +400,7 @@ export default function Home() {
               href="https://apps.apple.com/us/app/bins-shop-sell-share/id6751224385"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 sm:gap-4 flex-1 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+              className="flex items-center gap-2 sm:gap-4 flex-1 rounded-lg transition-colors cursor-pointer"
             >
               {/* App Icon */}
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-lg sm:rounded-xl flex items-center justify-center">
@@ -336,7 +414,7 @@ export default function Home() {
               </div>
               
               {/* App Details */}
-              <div className="flex-1 min-w-0">
+              <div className="min-w-0">
                 <h3 className="font-normal text-black text-base sm:text-lg leading-tight font-inter">Bins</h3>
                 <p className="text-xs sm:text-sm text-gray-700 leading-tight font-inter">Shop, Sell, Share</p>
                 <div className="flex items-center gap-1 sm:gap-2 mt-1">
@@ -366,15 +444,15 @@ export default function Home() {
                 console.log('FAQ button clicked')
                 openModal('faq')
               }}
-              className="text-gray-700 text-sm sm:text-base font-medium border border-gray-300 px-2 sm:px-3 h-16 rounded-xl hover:bg-gray-100 transition-colors whitespace-nowrap font-inter relative z-20 pointer-events-auto flex items-center cursor-pointer"
+              className="text-gray-700 text-sm font-medium border border-gray-300 px-2 h-16 rounded-xl hover:bg-gray-100 transition-colors whitespace-nowrap font-inter relative z-20 pointer-events-auto flex items-center justify-center cursor-pointer"
             >
-              <span className="hidden sm:inline">Seller + Buyer </span>FAQ
+              FAQ
             </button>
           </div>
         </div>
 
         {/* Footer Links - Desktop/iPad */}
-        <div className="hidden md:flex flex-wrap justify-center gap-2 sm:gap-4">
+        <div className="hidden md:flex flex-wrap justify-center gap-2 sm:gap-2">
           <a
             href="mailto:support@bins.app"
             className="text-gray-700 px-2 sm:px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors font-inter text-sm sm:text-base cursor-pointer"
@@ -420,7 +498,7 @@ export default function Home() {
               href="https://apps.apple.com/us/app/bins-shop-sell-share/id6751224385"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 flex-1 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+              className="flex items-center gap-3 flex-1 rounded-lg transition-colors cursor-pointer"
             >
               {/* App Icon */}
               <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
@@ -433,7 +511,7 @@ export default function Home() {
               </div>
               
               {/* App Details */}
-              <div className="flex-1 min-w-0">
+              <div className="min-w-0">
                 <h3 className="font-normal text-black text-base leading-tight font-inter">Bins</h3>
                 <p className="text-xs text-gray-700 leading-tight font-inter">Shop, Sell, Share</p>
                 <div className="flex items-center gap-1 mt-1">
@@ -460,7 +538,7 @@ export default function Home() {
                 console.log('FAQ button clicked')
                 openModal('faq')
               }}
-              className="text-gray-700 text-sm font-medium border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 transition-colors whitespace-nowrap font-inter relative z-20 pointer-events-auto cursor-pointer"
+              className="text-gray-700 text-sm font-medium border border-gray-300 px-2 h-16 w-20 rounded-xl hover:bg-gray-100 transition-colors whitespace-nowrap font-inter relative z-20 pointer-events-auto flex items-center justify-center cursor-pointer"
             >
               FAQ
             </button>
